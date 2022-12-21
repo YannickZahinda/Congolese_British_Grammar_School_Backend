@@ -1,24 +1,38 @@
-# README
+# Congolese British Grammar School CBGS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the backend part of my school management app.
 
-Things you may want to cover:
+# Build with 
 
-* Ruby version
+Language : `Ruby,`
+Framework : `Ruby On Rails`
 
-* System dependencies
+# Start the api
 
-* Configuration
+`git clone : repo.git`
 
-* Database creation
+`bundle install`
 
-* Database initialization
+`rails s`
 
-* How to run the test suite
+#### Access students
 
-* Services (job queues, cache servers, search engines, etc.)
+`` localhost:3000/v1/students ``
 
-* Deployment instructions
+#### Access teachers
 
-* ...
+`` localhost:3000/v1/teachers ``
+
+#### Access events
+
+`` localhost:3000/v1/events``
+
+#### Access parents
+
+`` localhost:3000/v1/parents ``
+
+# Yannick Zahinda
+
+[Github]()
+[LinkedIn]()
+
