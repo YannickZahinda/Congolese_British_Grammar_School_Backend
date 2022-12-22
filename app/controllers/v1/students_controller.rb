@@ -1,6 +1,6 @@
 class V1::StudentsController < ApplicationController
   def index
-    @students = Student.all  
+    @students = Student.all
     render json: @students, status: :ok
   end
 

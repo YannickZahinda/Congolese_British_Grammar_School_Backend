@@ -10,5 +10,4 @@ Rails.application.routes.draw do
     resources :parents, only: [:index, :create, :show, :destroy]
     resources :teachers, only: [:index, :create, :show, :destroy]
   end
-
 end
