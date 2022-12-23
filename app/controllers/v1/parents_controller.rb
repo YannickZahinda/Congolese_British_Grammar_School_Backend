@@ -5,7 +5,7 @@ class V1::ParentsController < ApplicationController
   end
 
   def create
-    @parents = Parent.new(parent_params)  
+    @parent = Parent.new(parent_params)  
     if @parent.save
       render json: { data: 'parent added successfully', status: :created }
     else
@@ -14,8 +14,7 @@ class V1::ParentsController < ApplicationController
   end
   
   def destroy
-    @parents = Parent.where(id: params[:id]).first
-    if @parent.destroy
+    if Parent.destroy(params[:id])
       head(:ok)
     else  
       head (:unprocessable_entity)
