@@ -14,7 +14,7 @@ class V1::TeachersController < ApplicationController
   end
 
   def destroy
-    if @teacher.destroy
+    if Teacher.destroy(params[:id])
       render json: { data: 'Deleted Teacher Successfully', status: :ok }
     else
       render json: { data: 'Successfully went wrong', status: 'failed' }

@@ -14,11 +14,10 @@ class V1::StudentsController < ApplicationController
   end
 
   def destroy
-    @student = Student.where(id: params[:id]).first 
-    if @student.destroy
-      head(:ok)
-    else  
-      head(:unprocessable_entity)
+    if Student.destroy(params[:id])
+      render json: {data: 'Deleted student successfully', status: :ok}
+    else 
+      render json: {data: 'Couldn\'t delete, something went wrong', status: 'failed'}
     end
   end
 
