@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   namespace :v1 do
-    resources :students, only: [:index, :create, :show, :destroy]
-    resources :events, only: [:index, :create, :show, :destroy]
-    resources :parents, only: [:index, :create, :show, :destroy]
-    resources :teachers, only: [:index, :create, :show, :destroy]
+    resources :students, only: [:index, :create, :show, :update, :destroy]
+    resources :events, only: [:index, :create, :show, :update, :destroy]
+    resources :parents, only: [:index, :create, :show, :update, :destroy]
+    resources :teachers, only: [:index, :create, :show, :update, :destroy]
   end
 end

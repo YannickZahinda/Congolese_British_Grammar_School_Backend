@@ -43,6 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_21_113011) do
     t.string "incharge_class"
     t.string "subject_handling"
     t.string "phone_number"
+    t.string "picture", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

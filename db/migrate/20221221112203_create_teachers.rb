@@ -6,6 +6,7 @@ class CreateTeachers < ActiveRecord::Migration[7.0]
       t.string :incharge_class
       t.string :subject_handling
       t.string :phone_number
+      t.string :picture, null: false
 
       t.timestamps
     end

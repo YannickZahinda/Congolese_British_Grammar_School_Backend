@@ -13,6 +13,15 @@ class V1::StudentsController < ApplicationController
     end       
   end
 
+  def update
+    @student = Student.find(params[:id])
+    if @student.update(student_params)
+      render json: {data: 'Updated successfully', status: :ok}
+    else  
+      render json: {data: 'Something went wrong', status: 'failed'}
+    end
+  end
+
   def destroy
     if Student.destroy(params[:id])
       render json: {data: 'Deleted student successfully', status: :ok}

@@ -13,8 +13,17 @@ class V1::TeachersController < ApplicationController
     end
   end
 
+  def update
+    @teacher = Teacher.find(params[:id])
+    if @teacher.update(teacher_params)
+      render json: {data: 'Teacher updated successfully', status: :ok}
+    else
+      render json: {data: 'Couldn\'t update teacher', status: 'failed'}
+    end
+  end
+
   def destroy
-    if Teacher.destroy(params[:id])
+    if Teacher.destroy(params)
       render json: { data: 'Deleted Teacher Successfully', status: :ok }
     else
       render json: { data: 'Successfully went wrong', status: 'failed' }
@@ -25,7 +34,11 @@ class V1::TeachersController < ApplicationController
     render json: @teachers.to_json(include: :parent)
   end
 
-  private  
+  private
+
+  def set_teacher
+    @teacher = Teacher.find(params[:id])
+  end
 
   def teacher_params
     params.require(:teacher).permit(:employee_code, :full_name, :incharge_class, :subject_handling, :phone_number)

@@ -12,6 +12,15 @@ class V1::ParentsController < ApplicationController
       render json: { data: @parent.errors.full_messages, status: 'failed' }, status: :unprocessable_entity
     end
   end
+
+  def update
+    @parent = Parent.find(params[:id])
+    if @parent.update(teacher_params)
+      render json: {data: 'Parent updated successfully',status: :ok}
+    else 
+      render json: {data: 'Couldn\'t update parent, something went wrong', status: 'failed'}
+    end
+  end
   
   def destroy
     if Parent.destroy(params[:id])
