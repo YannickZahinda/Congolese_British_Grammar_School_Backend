@@ -317,9 +317,9 @@ Devise.setup do |config|
       ['POST', %r{^/users/sign_in$}]
     ]
 
-    jwt.revocation_request = [
-      ['DELETE', %r{^/users/sign_out}]
-    ]
+    # jwt.revocation_request = [
+    #   ['DELETE', %r{^/users/sign_out}]
+    # ]
 
     #authorization token
     jwt.expiration_time = 120.minutes.to_i
