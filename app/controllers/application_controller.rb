@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::API
-    @parents = Parent.all
-
-    render json: @parents, status: :ok
+    before_action :authenticate_user!
+    before_action :configure_permitted_parameters, if: :devise_controller?
 end

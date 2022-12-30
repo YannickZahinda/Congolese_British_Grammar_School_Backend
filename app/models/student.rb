@@ -1,4 +1,5 @@
 class Student < ApplicationRecord
+    belongs_to :user
     # belongs_to :parent, class_name: 'Parent'
     # belongs_to :teachers
     # has_many :teachers
