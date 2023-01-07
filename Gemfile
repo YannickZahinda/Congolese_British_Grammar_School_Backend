@@ -52,3 +52,5 @@ group :development do
   # gem "spring"
 end
 
+
+gem "fly.io-rails", "~> 0.3.5"
