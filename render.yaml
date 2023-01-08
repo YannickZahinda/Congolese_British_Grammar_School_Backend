@@ -3,7 +3,7 @@ databases:
     ipAllowList: []
 
 services:
-  - type: web
+    - type: web
     name: rails
     env: ruby
     buildCommand: "./bin/render-build.sh"
@@ -16,7 +16,7 @@ services:
       - key: RAILS_MASTER_KEY
         sync: false
   -type: redis
-   name: redis
-   ipAllowList: []
-   plan: free
-   maxmemoryPolicy: noeviction
+    name: redis
+    ipAllowList: []
+    plan: free
+    maxmemoryPolicy: noeviction
