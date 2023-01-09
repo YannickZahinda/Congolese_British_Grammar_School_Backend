@@ -1,26 +1,19 @@
-- databases:
-    - name: myrailssite
-      databaseName: Congolese_British_Grammar_School_Backend
-      user: postgres
-      ipAllowList: []
+databases:
+  - name: myrailssite
+    databaseName: myrailssite
+    user: myrailssite
 
- services:
-    - type: web
-      name: myrailssite
-      env: ruby
-      buildCommand: "./bin/render-build.sh"
-      startCommand: bundle exec rails s
-       autoDeploy: false
+services:
+  - type: web
+    name: myrailssite
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    autoDeploy: false
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: postgresql
+          name: myrailssite
           property: connectionString
-      - key: RAILS_MASTER_KEY
-        sync: false
-         generateValue: true
-  - type: redis
-    name: redis
-    ipAllowList: []
-    plan: free
-    maxmemoryPolicy: noeviction
+      - key: SECRET_KEY_BASE
+        generateValue: true
