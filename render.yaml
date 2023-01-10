@@ -9,7 +9,7 @@ services:
     buildCommand: "./bin/rend-build.sh"
     startCommand: "bundle exec rails s"
     envVars:
-      - key: RAILSLL_MASTER_KEY
+      - key: RAILS_MASTER_KEY
         sync: false
       - key: DATABASE_URL
         fromDatabase: 
