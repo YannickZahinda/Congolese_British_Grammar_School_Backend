@@ -1,6 +1,6 @@
 databases:
   - name: postgres
-    ipAlloList: []
+    # ipAlloList: []
   
 services:
   - type: web
