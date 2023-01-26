@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  
   get '/current_user', to: 'current_user#index'
 
   namespace :v1 do
