@@ -1,5 +1,6 @@
 class V1::ParentsController < ApplicationController
   before_action :set_parent, only: [:show, :update, :destroy]
+
   def index
     @parents = Parent.all
     # @parents = current_user.parents
