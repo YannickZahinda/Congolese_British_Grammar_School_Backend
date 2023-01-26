@@ -1,6 +1,8 @@
 class V1::ParentsController < ApplicationController
+  before_action :set_parent, only: [:show, :update, :destroy]
   def index
     @parents = Parent.all
+    # @parents = current_user.parents
     render json: @parents, status: :ok
   end
 
@@ -34,7 +36,11 @@ class V1::ParentsController < ApplicationController
     render json: @parents.to_json(include: :parent)
   end
     
-  private    
+  private
+  
+  def set_parent 
+    @parent = Parent.find(params[:id])
+  end
 
   def parent_params
     params.require(:parent).permit(:full_name, :student_name, :parent_email)

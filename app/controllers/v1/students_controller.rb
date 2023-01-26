@@ -1,4 +1,6 @@
 class V1::StudentsController < ApplicationController
+  before_action :set_student, only: %i[show update destroy]
+
   def index
     @students = Student.all
     render json: @students, status: :ok
@@ -35,6 +37,10 @@ class V1::StudentsController < ApplicationController
   end
 
   private  
+
+  def set_student 
+     @student = Student.find(params[:id])
+  end
 
   def student_params
     params.require(:student).permit(:roll_number, :first_name, :parent, :street_address, :phone_number)

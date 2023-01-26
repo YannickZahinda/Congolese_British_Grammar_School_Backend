@@ -1,4 +1,5 @@
 class V1::TeachersController < ApplicationController
+  before_action :set_teacher, only: %i[show update destroy]
   def index
     @teachers = Teacher.all
     render json: @teachers, status: :ok
