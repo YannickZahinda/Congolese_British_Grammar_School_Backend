@@ -31,6 +31,10 @@ Framework : `Ruby On Rails`
 
 `` localhost:3000/v1/parents ``
 
+### To post a user
+
+` Method: POST : localhost:3000/users`
+
 # Yannick Zahinda
 
 [Github]()
