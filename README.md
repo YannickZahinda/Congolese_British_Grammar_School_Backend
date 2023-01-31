@@ -31,9 +31,13 @@ Framework : `Ruby On Rails`
 
 `` localhost:3000/v1/parents ``
 
-### To post a user
+### To sign up a user
 
 ` Method: POST : localhost:3000/users`
+
+### To sign in a user
+
+` Method: POST: http://localhost:3000/users/sign_in`
 
 # Yannick Zahinda
 
