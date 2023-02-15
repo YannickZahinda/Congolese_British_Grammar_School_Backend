@@ -7,7 +7,7 @@ class Ability
       # return unless user.admin?
       # can :read, :all
       if user.admin?
-        can :manage, all:
+        can :manage, :all
       end
   end
 end
