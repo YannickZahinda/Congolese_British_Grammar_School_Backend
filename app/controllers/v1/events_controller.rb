@@ -16,12 +16,20 @@ class V1::EventsController < ApplicationController
     end       
   end
 
-  def destroy
-    @event = Event.where(id: params[:id]).first 
-    if @event.destroy
-      head(:ok)
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      render json: {data: 'Updated succesfully', status: :ok}
     else  
-      head(:unprocessable_entity)
+      render json: {data: 'Something went wrong', status: 'failed'}
+    end
+  end
+
+  def destroy
+    if Event.destroy(params[:id]) 
+      render json: {data: 'Event deleted successfully', status: :ok}
+    else  
+      render json: {data: 'Couldn\'t delete event', status: 'failed'}
     end
   end
 
@@ -36,6 +44,6 @@ class V1::EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit()
+    params.require(:event).permit(:event_title, :event_description)
   end
 end
